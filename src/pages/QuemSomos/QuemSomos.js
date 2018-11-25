@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
-import logo from '../../logo.svg';
 import icone from '../../venus.svg';
 import './QuemSomos.css';
 
