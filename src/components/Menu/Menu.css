@@ -1,5 +1,9 @@
 .navbar-menu{
     display: flex;
+    
+}
+.navbar-menu *{
+    font-family: 'Slabo 27px', serif;
 }
 
 /* Classes do botão menu */
