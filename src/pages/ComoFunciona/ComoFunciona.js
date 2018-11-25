@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
+import Label from '../../components/Label/Label';
 import icone from '../../venus.svg';
 import './ComoFunciona.css';
 
@@ -16,6 +17,7 @@ class ComoFunciona extends Component {
                     </h1>
                 </article>
                 <section className="como-funciona__instrucoes">
+                
                    
                 </section>  
             </main>
