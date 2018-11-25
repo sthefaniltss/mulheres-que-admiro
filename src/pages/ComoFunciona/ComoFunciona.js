@@ -4,6 +4,7 @@ import Navbar from '../../components/Navbar/Navbar';
 import Label from '../../components/Label/Label';
 import icone from '../../venus.svg';
 import './ComoFunciona.css';
+import Legenda from '../../components/Legenda/Legenda';
 
 class ComoFunciona extends Component {
   render() {
@@ -17,7 +18,7 @@ class ComoFunciona extends Component {
                     </h1>
                 </article>
                 <section className="como-funciona__instrucoes">
-                
+
                    
                 </section>  
             </main>
