@@ -118,6 +118,7 @@
 @media (min-width: 500px) {
     
 .navbar-admirar__botao {
+    text-decoration: none;
     display: block;
     cursor: pointer;
     font-size: 18px;

@@ -53,9 +53,10 @@ class Menu extends Component {
                         </NavLink>
                     </li>
                 </ul>
-                    <button className="navbar-admirar__botao">
-                        Admirar Agora!
-                    </button>
+        
+                    <NavLink to="/admirar" className="navbar-admirar__botao" activeClassName="navbar-menu__opcoes--ativo">
+                            Admirar Agora!
+                    </NavLink>
 
             </nav>
         )
