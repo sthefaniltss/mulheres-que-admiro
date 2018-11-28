@@ -8,11 +8,13 @@ import './Admirar.css';
 class Admirar extends Component {
     constructor(props) {
         super(props);
-        this.state = { image: null };
+        
+        this.state = { image: null};
     }
     onPick = image => {
         this.setState({ image });
     };
+    
 
     render() {
         const layouts = [
@@ -28,8 +30,8 @@ class Admirar extends Component {
                     <h1>Escolha seu layout:</h1>
                         <ImagePicker images={layouts} onPick={this.onPick} />
                 </article>
-                <section>
-
+                <section className="admirar__secao">
+                 
                 </section>
             </main>
         </div>

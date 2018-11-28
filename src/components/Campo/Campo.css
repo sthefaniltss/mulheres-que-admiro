@@ -1,0 +1,17 @@
+.campo {
+    font-size: 1rem;
+    box-sizing: border-box;
+    display: block;
+    width: 50%;
+    padding: 0.8rem;
+    margin: 0 0 1rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: none;
+}
+
+.campo:focus {
+    outline: none;
+    border-color: white;
+    box-shadow: 0 0 2px white;
+}
