@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Navbar from '../../components/Navbar/Navbar';
-import Label from '../../components/Label/Label';
+import Titulo from '../../components/Titulo/Titulo';
 import Figure from '../../components/Figure/Figure';
 import Legenda from '../../components/Legenda/Legenda';
 import passo1 from '../../passo1.svg';
@@ -20,22 +20,22 @@ class ComoFunciona extends Component {
                 </article>
                 <section className="como-funciona__instrucoes">
                   <div>
-                    <Label>Passo 1</Label>
+                    <Titulo>Passo 1</Titulo>
                     <Figure src={passo1}/>
                     <Legenda>Clique no botão</Legenda>
                   </div>
                   <div>
-                    <Label>Passo 2</Label>
+                    <Titulo>Passo 2</Titulo>
                     <Figure src={passo2}/>
                     <Legenda>Escolha um layout</Legenda>
                   </div>
                   <div>
-                    <Label>Passo 3</Label>
+                    <Titulo>Passo 3</Titulo>
                     <Figure src={passo1}/>
                     <Legenda>Preencha as informações necessárias</Legenda>
                   </div>
                   <div>
-                    <Label>Passo 4</Label>
+                    <Titulo>Passo 4</Titulo>
                     <Figure src={passo1}/>
                     <Legenda>Envie para quem você quiser!</Legenda>
                   </div>
