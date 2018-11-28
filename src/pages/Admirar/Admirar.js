@@ -31,7 +31,6 @@ class Admirar extends Component {
                         <ImagePicker images={layouts} onPick={this.onPick} />
                 </article>
                 <section className="admirar__secao">
-                 
                 </section>
             </main>
         </div>

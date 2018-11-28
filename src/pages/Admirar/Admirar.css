@@ -1,8 +1,6 @@
-.admirar *{
+.admirar__titulo{
     font-family: 'Slabo 27px', serif;
     color: white;
-}
-.admirar__titulo{
     background-color: #a18cff;
     width: 100vw;
     height: 300px;

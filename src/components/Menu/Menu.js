@@ -54,7 +54,7 @@ class Menu extends Component {
                     </li>
                 </ul>
         
-                    <NavLink to="/admirar" className="navbar-admirar__botao" activeClassName="navbar-menu__opcoes--ativo">
+                    <NavLink to="/admirar" className="navbar-admirar__botao" >
                             Admirar Agora!
                     </NavLink>
 
