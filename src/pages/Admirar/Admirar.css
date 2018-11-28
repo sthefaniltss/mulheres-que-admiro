@@ -12,6 +12,47 @@
     
 }
 .admirar__secao{
+    font-family: 'Slabo 27px', serif;
+    color: white;
     background-color: #77D7ED;
-    height: 800px;
+    height: 70vh;
+    padding: 0.75rem 10% 0;
+}
+.admirar__secao h1{
+    text-align: center;
+    margin: 40px;
+}
+
+@media (min-width: 768px) {
+    .admirar__secao {
+        padding: 1.5rem 20% 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .admirar__secao {
+        padding: 2.25rem 30% 0;
+    }
+}
+
+/* textarea */
+
+.admirar__mensagem {
+    font-size: 1rem;
+    font-family: 'Slabo 27px', serif;
+    color: white;
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0 0 1rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    background: none;
+}
+
+.admirar__mensagem:focus {
+    outline: none;
+    border-color: white;
+    box-shadow: 0 0 2px white;
 }
