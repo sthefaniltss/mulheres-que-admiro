@@ -5,24 +5,34 @@
     width: 100vw;
     height: 300px;
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 30px 0;
-    overflow: auto;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 0 0 0;
     
+}
+
+.admirar__titulo--imagens{
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    height:100%;
 }
 .admirar__secao{
     font-family: 'Slabo 27px', serif;
     color: white;
     background-color: #77D7ED;
-    height: 70vh;
+    height: 80vh;
     padding: 0.75rem 10% 0;
 }
 .admirar__secao h1{
     text-align: center;
     margin: 40px;
 }
-
+@media (min-width: 524px) {
+    .admirar__titulo {
+        align-items: center;
+    }
+}
 @media (min-width: 768px) {
     .admirar__secao {
         padding: 1.5rem 20% 0;
@@ -55,4 +65,57 @@
     outline: none;
     border-color: white;
     box-shadow: 0 0 2px white;
+}
+
+/* ImagePicker */
+
+.image_picker{
+    width:100%;
+    display: flex;
+    /* overflow-x: auto; */
+}
+.image_picker .responsive{
+    position:relative;
+    margin:0 6px;
+    float:left;
+    opacity:1;
+}
+.image_picker .responsive .thumbnail{
+    border:1px solid #ddd;
+    border-radius:4px;
+    padding:5px;
+    width:150px;
+    opacity:1;
+    margin:0;
+}
+.image_picker .responsive .thumbnail:hover{
+    box-shadow:0 0 2px 1px rgba(255, 255, 255, 0.7);
+}
+.image_picker .responsive .selected{
+    background-color:white;
+}
+.image_picker .responsive:hover{
+    cursor:pointer;
+}
+.image_picker .responsive .checked{
+    display:none;
+}
+.image_picker .selected{
+    opacity:.7;
+}
+.image_picker .selected .checked{
+    display:inline-block;
+    transition:.5s ease;
+    position:absolute;
+    top:10px;
+    right:10px;
+}
+.image_picker .selected .checked .icon{
+    background:url("../../checked.svg");
+    background-size:cover;
+    height:25px;
+    width:25px;
+}
+.image_picker .clear{
+    clear:both;
 }

@@ -4,7 +4,7 @@ import Label from '../../components/Label/Label';
 import Campo from '../../components/Campo/Campo';
 import ImagePicker from "react-image-picker";
 import passo1 from '../../passo1.svg';
-import "react-image-picker/dist/index.css";
+// import "react-image-picker/dist/index.css";
 import './Admirar.css';
 
 class Admirar extends Component {
@@ -30,7 +30,10 @@ class Admirar extends Component {
             <main className="">
                 <article className="admirar__titulo">
                     <h1>Escolha seu layout:</h1>
+                    <div className="admirar__titulo--imagens">
                         <ImagePicker images={layouts} onPick={this.onPick} />
+
+                    </div>
                 </article>
                 <section className="admirar__secao">
                     <h1>Agora preencha as informações:</h1>
