@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import Botao from '../../components/Botao/Botao';
 import Navbar from '../../components/Navbar/Navbar';
 import logo from '../../logo.svg';
 import icone from '../../venus.svg';
@@ -26,9 +26,9 @@ class Home extends Component {
                     <p>
                         É muito simples presentear assim, e você pode deixar alguém feliz!
                     </p>
-                    <NavLink to="/quem-somos" className="home__botao">
-                        Saiba Mais <img className="home__logo-icone" src={icone} alt="Icone do Logo"/>
-                    </NavLink>
+                    <Botao to="/quem-somos" >
+                        Saiba Mais 
+                    </Botao>
                     
                 </section>  
             </main>

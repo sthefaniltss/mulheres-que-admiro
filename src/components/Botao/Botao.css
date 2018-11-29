@@ -1,0 +1,17 @@
+.botao{
+    font-family: 'Vibur', cursive!important;
+    font-size: 1.3em;
+    border: 1px solid white;
+    border-radius: 5px;
+    text-decoration: none;
+    padding: 10px;
+}
+.botao__logo-icone {
+    width: 20px;
+    margin-left: 8px; 
+}
+@media (min-width: 992px) {
+    .botao__logo-icone {
+        width: 30px;
+    }
+}

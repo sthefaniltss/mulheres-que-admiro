@@ -37,22 +37,14 @@
     text-align: justify;
     width: 70%;
 }
+.home__introducao p:nth-child(2){
+    margin-bottom: 60px;
+}
 .home__logo {
     margin-top: 13px;
     width: 280px;
 }
-.home__logo-icone {
-    width: 20px;
-}
-.home__botao{
-    margin-top: 20px;
-    font-family: 'Vibur', cursive;
-    font-size: 1.3em;
-    border: 1px solid white;
-    border-radius: 5px;
-    text-decoration: none;
-    padding: 10px;
-}
+
 
 @media (min-width: 992px) {
     .home__titulo{
@@ -73,7 +65,5 @@
         width: 60%;
         text-align: center;
     }
-    .home__logo-icone {
-        width: 30px;
-    }
+    
 }

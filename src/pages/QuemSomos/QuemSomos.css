@@ -36,19 +36,9 @@
 .quem-somos__introducao p{
     text-align: justify;
     width: 70%;
+    margin-bottom: 70px;
 }
-.quem-somos__logo-icone {
-    width: 20px;
-}
-.quem-somos__botao{
-    margin: 20px;
-    font-family: 'Vibur', cursive;
-    font-size: 1.3em;
-    border: 1px solid white;
-    border-radius: 5px;
-    text-decoration: none;
-    padding: 10px;
-}
+
 @media (min-width: 500px) {
     .quem-somos__introducao{
         height: 100vh;
@@ -64,8 +54,5 @@
     .quem-somos__introducao p{
         width: 80%;
         text-align: center;
-    }
-    .quem-somos__logo-icone {
-        width: 30px;
     }
 }
