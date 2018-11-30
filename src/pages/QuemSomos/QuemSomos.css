@@ -1,8 +1,3 @@
-.quem-somos {
-    /* padding: 3rem 1rem 0 0; */
-    height: 100%;
-    
-}
 .quem-somos *{
     font-family: 'Slabo 27px', serif;
     color: white;
@@ -26,7 +21,7 @@
 }
 .quem-somos__introducao{
     background-color: #77D7ED;
-    height: 100%;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,11 +34,6 @@
     margin-bottom: 70px;
 }
 
-@media (min-width: 500px) {
-    .quem-somos__introducao{
-        height: 100vh;
-    }
-}
 @media (min-width: 992px) {
     .quem-somos__titulo h1{
         font-size: 2.5em;

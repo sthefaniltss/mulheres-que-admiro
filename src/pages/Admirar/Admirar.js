@@ -4,7 +4,7 @@ import Label from '../../components/Label/Label';
 import Campo from '../../components/Campo/Campo';
 import ImagePicker from "react-image-picker";
 import passo1 from '../../passo1.svg';
-// import "react-image-picker/dist/index.css";
+import htmlToImage from 'html-to-image';
 import './Admirar.css';
 
 class Admirar extends Component {
@@ -16,6 +16,9 @@ class Admirar extends Component {
     onPick = image => {
         this.setState({ image });
     };
+    // donwload = htmlToImage.toPng(document.getElementById('my-node'))
+    // .then(function (dataUrl) {download(dataUrl, 'my-node.png');
+    // });
     
 
     render() {
@@ -48,6 +51,9 @@ class Admirar extends Component {
                         <Campo id="data" type="date" name="data"/>
                         <Label>Nome na assinatura:</Label>
                         <Campo id="nome__assinatura" type="text" name="nome__assinatura" placeholder="Digite aqui o nome na assinatura"/>
+                        <div className="admirar__botao-display">
+                            <button className="admirar__botao">Admirar!</button>
+                        </div>
                     </form>
                 </section>
             </main>
