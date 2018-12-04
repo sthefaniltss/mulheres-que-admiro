@@ -1,0 +1,81 @@
+.layout{
+    width: 80vw;
+    font-family: 'Slabo 27px', serif;
+}
+.layout__linha-rosa{
+    width: 100%;
+    height: 70%;
+    border: solid 2px #e8717a;
+    display: flex;
+    justify-content: center;
+}
+.layout__linha-azul{
+    width: 100%;
+    height: 70%;
+    border: solid 2px #77D7ED;
+    margin: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.layout__arabesco{
+    width: 90px;
+}
+.layout__titulo{
+    width: 95%;
+    height: 30%;
+    margin: 2px;
+    border: solid 2px #a18cff;
+    font-family: 'Vibur', cursive;
+    font-size: 1.2em; 
+}
+.layout__titulo p{
+    margin: 0;
+    text-align: center;
+    font-size: 1.2em;
+    color: #a18cff;
+    font-weight: 550;
+}
+.layout__info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.layout__info h1{
+    font-size: 1.5em;
+    margin: 2px;
+    color: #e8717a;
+    font-family: 'Vibur', cursive;
+}
+.layout__info-textos{
+    width: 90%;
+    font-size: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    color: #e8717a;
+}
+.layout__info-textos p{
+    margin: 5px;
+    width: 100%;
+}
+.layout__info-textos p p{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.layout__info-textos p p span{
+    width: 45%;
+}
+.layout__info-textos p span {
+    margin-left: 2px;
+}
+.sublinhado{
+    text-decoration: underline  #e8717a;
+    font-family: 'Vibur', cursive;
+    font-size: 1.2em;
+}
+.layout__logo{
+    width: 14px;
+}

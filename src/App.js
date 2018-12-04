@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import QuemSomos from './pages/QuemSomos/QuemSomos';
 import ComoFunciona from './pages/ComoFunciona/ComoFunciona';
 import Admirar from './pages/Admirar/Admirar';
+import Layout from './components/Layout/Layout';
 import './App.css';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
              <Route path="/quem-somos" component={QuemSomos}/>
              <Route path="/como-funciona" component={ComoFunciona}/>
              <Route path="/admirar" component={Admirar}/>
+             <Route path="/layout" component={Layout}/>
          </Switch>
       </div>
     );
