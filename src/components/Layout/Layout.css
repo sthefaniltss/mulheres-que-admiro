@@ -1,6 +1,9 @@
 .layout{
     width: 80vw;
     font-family: 'Slabo 27px', serif;
+    position: absolute;
+    top:500px;
+    background-color: white;
 }
 .layout__linha-rosa{
     width: 100%;
@@ -78,4 +81,9 @@
 }
 .layout__logo{
     width: 14px;
+}
+@media (min-width: 670px) {
+    .layout {
+        width: 600px;
+    }
 }
