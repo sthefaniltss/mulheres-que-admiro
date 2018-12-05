@@ -5,6 +5,8 @@ import Figure from '../../components/Figure/Figure';
 import Legenda from '../../components/Legenda/Legenda';
 import passo1 from '../../passo1.svg';
 import passo2 from '../../passo2.svg';
+import passo3 from '../../passo3.png';
+import passo4 from '../../passo4.png';
 import './ComoFunciona.css';
 
 class ComoFunciona extends Component {
@@ -31,12 +33,12 @@ class ComoFunciona extends Component {
                   </div>
                   <div>
                     <Titulo>Passo 3</Titulo>
-                    <Figure src={passo1}/>
+                    <Figure src={passo3}/>
                     <Legenda>Preencha as informações necessárias</Legenda>
                   </div>
                   <div>
                     <Titulo>Passo 4</Titulo>
-                    <Figure src={passo1}/>
+                    <Figure src={passo4}/>
                     <Legenda>Envie para quem você quiser!</Legenda>
                   </div>
                    
