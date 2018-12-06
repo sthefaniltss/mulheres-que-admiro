@@ -12,9 +12,9 @@ class Admirar extends Component {
     constructor(props) {
         super(props);
         
-        this.state = { image: null};
+        this.state = { image: null, certificado: false};
         this.valor = '';
-        
+        // this.layout = false;
     }
     onPick = image => {
         this.setState({ image });
@@ -26,6 +26,9 @@ class Admirar extends Component {
     pegaValor() {
         return this.valor;
     }
+    // pegaLayout(){
+    //     return this.layout;
+    // }
 
     validar = (event) => {
         const textarea = event.target;
@@ -33,7 +36,10 @@ class Admirar extends Component {
         this.valor = value;
         console.log(value)
     }
-    
+    layoutEscolhido = (event) => {
+        event.preventDefault();
+        this.setState({certificado: true});
+    }
 
     render() {
         const layouts = [
@@ -41,6 +47,7 @@ class Admirar extends Component {
             { src: passo1, value: 1 },
             { src: passo1, value: 2 }
           ];
+        const certificado = this.state.certificado;
         return (
         <div className="admirar">
             <Navbar/>
@@ -54,7 +61,7 @@ class Admirar extends Component {
                 </article>
                 <section className="admirar__secao">
                     <h1>Agora preencha as informações:</h1>
-                    <form>
+                    <form onSubmit={this.layoutEscolhido}>
                         <Label>Nome da Admirada:</Label>
                         <Campo id="nome__admirada" type="text" name="nome__admirada" placeholder="Digite aqui o nome da admirada" />
                         <Label>Mensagem:</Label>
@@ -66,10 +73,11 @@ class Admirar extends Component {
                         <Label>Nome na assinatura:</Label>
                         <Campo id="nome__assinatura" type="text" name="nome__assinatura" placeholder="Digite aqui o nome na assinatura"/>
                         <div className="admirar__botao-display">
-                            <button  className="admirar__botao">Admirar!</button>
+                            <button className="admirar__botao">Admirar!</button>
                         </div>
-                    </form>
-                    {/* <Layout/>  */}
+                    </form>{
+                         certificado ? (<Layout/>) : (false)
+                    }
                 </section>
             </main>
         </div>

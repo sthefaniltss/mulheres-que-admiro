@@ -17,7 +17,7 @@ class Layout extends Component {
 
     render() {
         return (
-            <div id="layout__admirar" className="layout">
+            <div  id="layout__admirar" className="layout">
                 <div className="layout__linha-rosa">
                     <div className="layout__linha-azul">
                         <div>
