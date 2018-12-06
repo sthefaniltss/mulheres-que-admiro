@@ -6,11 +6,18 @@ import venus from './venus-pink.svg';
 class Layout extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            nomeAdmirada: '',
+            mensagem: '',
+            nomeCompleto: '',
+            data:'',
+            nomeAssinatura: ''
+        }
     }
 
     render() {
         return (
-            <div className="layout">
+            <div id="layout__admirar" className="layout">
                 <div className="layout__linha-rosa">
                     <div className="layout__linha-azul">
                         <div>
@@ -27,18 +34,18 @@ class Layout extends Component {
                             </h1>
                             <div className="layout__info-textos">
                                 <p>
-                                    <span className="sublinhado">Caroline Pandolfe</span>
+                                    <span className="sublinhado">{this.state.nomeAdmirada}</span>
                                     <span>, é com muito carinho que te homenageio por
-                                        <span>me aguentar todos os dias, pelas conversas e por nos empoderarmos todos os dias juntas!
+                                        <span>{this.state.mensagem}
                                         </span>
                                     </span>
                                 </p>
-                                <p>Um abraço especial de                 <span className="sublinhado"> Sthefani Laura</span>.
+                                <p>Um abraço especial de                 <span className="sublinhado"> {this.state.nomeCompleto} </span>.
                                 </p>
                                 <p>
-                                    <span>04/12/2018</span>
+                                    <span>{this.state.data}</span>
                                     <p>
-                                        <span className="sublinhado">Sthefani Laura</span>
+                                        <span className="sublinhado">{this.state.nomeAssinatura}</span>
                                         <span className="sublinhado">Mulheres que admiro <img src={venus} className="layout__logo" /></span>
                                     </p>
 
