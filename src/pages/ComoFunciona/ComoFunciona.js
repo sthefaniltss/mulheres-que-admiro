@@ -4,7 +4,7 @@ import Titulo from '../../components/Titulo/Titulo';
 import Figure from '../../components/Figure/Figure';
 import Legenda from '../../components/Legenda/Legenda';
 import passo1 from '../../passo1.svg';
-import passo2 from '../../passo2.svg';
+import passo2 from '../../passo2.png';
 import passo3 from '../../passo3.png';
 import passo4 from '../../passo4.png';
 import './ComoFunciona.css';

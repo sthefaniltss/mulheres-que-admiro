@@ -4,8 +4,9 @@ import Label from '../../components/Label/Label';
 import Campo from '../../components/Campo/Campo';
 import Layout from '../../components/Layout/Layout';
 import ImagePicker from 'react-image-picker';
-import passo1 from '../../passo1.svg';
-import htmlToImage from 'html-to-image';
+import passo4 from '../../passo4.png';
+import layout2 from './layout2.png';
+import layout3 from './layout3.png';
 import './Admirar.css';
 
 class Admirar extends Component {
@@ -15,15 +16,14 @@ class Admirar extends Component {
         this.nomeRef = React.createRef();
         this.dataRef = React.createRef();
         this.assinaturaRef = React.createRef();
-        this.state = { image: null, certificado: false};
+        this.mensagem = React.createRef();
+        this.state = { image: null, certificado: false, dados: null};
         this.valor = '';
     }
     onPick = image => {
         this.setState({ image });
     };
-    // donwload = htmlToImage.toPng(document.getElementById('my-node'))
-    // .then(function (dataUrl) {download(dataUrl, 'my-node.png');
-    // });
+   
     
     pegaValor() {
         return this.valor;
@@ -48,22 +48,22 @@ class Admirar extends Component {
         const inputNome =  this.nomeRef.current;
         const inputData =  this.dataRef.current;
         const inputAssinatura =  this.assinaturaRef.current;
-        const textareaMensagem = this.validar()
+        const textareaMensagem = this.mensagem.current;
         const dados = {
             nomeAdmirada: inputAdmirada.pegaValor(),
-            mensagem: textareaMensagem.pegaValor(),
+            mensagem: textareaMensagem,
             nomeCompleto: inputNome.pegaValor(),
             data:inputData.pegaValor(),
             nomeAssinatura: inputAssinatura.pegaValor()
         }
-        return dados;
+        this.setState({dados})
     }
 
     render() {
         const layouts = [
-            { src: passo1, value: 0 },
-            { src: passo1, value: 1 },
-            { src: passo1, value: 2 }
+            { src: passo4, value: 0 },
+            { src: layout2, value: 1 },
+            { src: layout3, value: 2 }
           ];
         const certificado = this.state.certificado;
         return (
@@ -78,23 +78,31 @@ class Admirar extends Component {
                     </div>
                 </article>
                 <section className="admirar__secao">
-                    <form onSubmit={this.layoutEscolhido}>
+                    <form   onSubmit={this.enviaDados}>
                     <h1>Agora preencha as informações:</h1>
                         <Label>Nome da Admirada:</Label>
                         <Campo ref={this.nomeAdmiradaRef} id="nome__admirada" type="text" name="nome__admirada" placeholder="Digite aqui o nome da admirada" />
                         <Label>Mensagem:</Label>
-                        <textarea onChange={this.validar} className="admirar__mensagem" rows="3" placeholder="Digite aqui a sua homenagem"> </textarea>
+                        <textarea ref={this.mensagem} onChange={this.validar} className="admirar__mensagem" rows="3" placeholder="Digite aqui a sua homenagem"> </textarea>
                         <Label>Nome completo:</Label>
                         <Campo ref={this.nomeRef} id="nome" type="text" name="nome__seu" placeholder="Digite aqui o seu nome" />
                         <Label>Data:</Label>
                         <Campo ref={this.dataRef} id="data" type="date" name="data"/>
                         <Label>Nome na assinatura:</Label>
-                        <Campo ref={this.nomeAssinaturaRef} id="nome__assinatura" type="text" name="nome__assinatura" placeholder="Digite aqui o nome na assinatura"/>
+                        <Campo ref={this.assinaturaRef} id="nome__assinatura" type="text" name="nome__assinatura" placeholder="Digite aqui o nome na assinatura"/>
                         <div className="admirar__botao-display">
-                            <button className="admirar__botao">Admirar!</button>
+                            <button  onClick={this.layoutEscolhido} className="admirar__botao">Admirar!</button>
                         </div>
-                    </form>{
-                         certificado ? (<Layout/>) : (false)
+                    </form>
+                    {
+                        certificado ? (
+                        <div> 
+                            <Layout alteraSetState={this.dados}/> 
+                            <button className="botao__modal--fechar">
+
+                            </button>
+                        </div>
+                        ) : false
                     }
                 </section>
             </main>

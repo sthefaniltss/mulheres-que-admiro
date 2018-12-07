@@ -17,7 +17,7 @@ class Layout extends Component {
 
     render() {
         return (
-            <div  id="layout__admirar" className="layout">
+            <div alteraSetState={this.props.alteraSetState} id="layout__admirar" className="layout">
                 <div className="layout__linha-rosa">
                     <div className="layout__linha-azul">
                         <div>
@@ -30,7 +30,7 @@ class Layout extends Component {
                         </div>
                         <div className="layout__info">
                             <h1>
-                                Obrigada {this.props.agoravai}
+                                Obrigada
                             </h1>
                             <div className="layout__info-textos">
                                 <p>
