@@ -11,10 +11,12 @@ import './Admirar.css';
 class Admirar extends Component {
     constructor(props) {
         super(props);
-        
+        this.nomeAdmiradaRef = React.createRef();
+        this.nomeRef = React.createRef();
+        this.dataRef = React.createRef();
+        this.assinaturaRef = React.createRef();
         this.state = { image: null, certificado: false};
         this.valor = '';
-        // this.layout = false;
     }
     onPick = image => {
         this.setState({ image });
@@ -40,6 +42,22 @@ class Admirar extends Component {
         event.preventDefault();
         this.setState({certificado: true});
     }
+    enviaDados = (event) => {
+        event.preventDefault();
+        const inputAdmirada = this.nomeAdmiradaRef.current;
+        const inputNome =  this.nomeRef.current;
+        const inputData =  this.dataRef.current;
+        const inputAssinatura =  this.assinaturaRef.current;
+        const textareaMensagem = this.validar()
+        const dados = {
+            nomeAdmirada: inputAdmirada.pegaValor(),
+            mensagem: textareaMensagem.pegaValor(),
+            nomeCompleto: inputNome.pegaValor(),
+            data:inputData.pegaValor(),
+            nomeAssinatura: inputAssinatura.pegaValor()
+        }
+        return dados;
+    }
 
     render() {
         const layouts = [
@@ -60,18 +78,18 @@ class Admirar extends Component {
                     </div>
                 </article>
                 <section className="admirar__secao">
-                    <h1>Agora preencha as informações:</h1>
                     <form onSubmit={this.layoutEscolhido}>
+                    <h1>Agora preencha as informações:</h1>
                         <Label>Nome da Admirada:</Label>
-                        <Campo id="nome__admirada" type="text" name="nome__admirada" placeholder="Digite aqui o nome da admirada" />
+                        <Campo ref={this.nomeAdmiradaRef} id="nome__admirada" type="text" name="nome__admirada" placeholder="Digite aqui o nome da admirada" />
                         <Label>Mensagem:</Label>
                         <textarea onChange={this.validar} className="admirar__mensagem" rows="3" placeholder="Digite aqui a sua homenagem"> </textarea>
                         <Label>Nome completo:</Label>
-                        <Campo id="nome" type="text" name="nome__admirada" placeholder="Digite aqui o seu nome" />
+                        <Campo ref={this.nomeRef} id="nome" type="text" name="nome__seu" placeholder="Digite aqui o seu nome" />
                         <Label>Data:</Label>
-                        <Campo id="data" type="date" name="data"/>
+                        <Campo ref={this.dataRef} id="data" type="date" name="data"/>
                         <Label>Nome na assinatura:</Label>
-                        <Campo id="nome__assinatura" type="text" name="nome__assinatura" placeholder="Digite aqui o nome na assinatura"/>
+                        <Campo ref={this.nomeAssinaturaRef} id="nome__assinatura" type="text" name="nome__assinatura" placeholder="Digite aqui o nome na assinatura"/>
                         <div className="admirar__botao-display">
                             <button className="admirar__botao">Admirar!</button>
                         </div>

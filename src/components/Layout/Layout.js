@@ -30,7 +30,7 @@ class Layout extends Component {
                         </div>
                         <div className="layout__info">
                             <h1>
-                                Obrigada
+                                Obrigada {this.props.agoravai}
                             </h1>
                             <div className="layout__info-textos">
                                 <p>

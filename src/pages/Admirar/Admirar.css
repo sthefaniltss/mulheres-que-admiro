@@ -1,9 +1,12 @@
+.admirar{
+    overflow: hidden;
+}
 .admirar__titulo{
     font-family: 'Slabo 27px', serif;
     color: white;
     background-color: #a18cff;
     width: 100vw;
-    height: 300px;
+    height: 270px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -21,7 +24,7 @@
     font-family: 'Slabo 27px', serif;
     color: white;
     background-color: #77D7ED;
-    height: 90vh;
+    height: 100vh;
     padding: 0.75rem 10% 0;
 }
 .admirar__secao h1{
@@ -75,6 +78,7 @@
     text-decoration: none;
     padding: 5px 15px;
     color: #77D7ED;
+    background: white;
 }
 .admirar__botao-display{
     width: 100%;
