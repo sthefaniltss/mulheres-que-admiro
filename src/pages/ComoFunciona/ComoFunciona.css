@@ -20,18 +20,17 @@
     
 }
 .como-funciona__titulo h1{
-    margin: 0 15px 0 0;
+    margin: 0;
+    text-align: center;
     font-size: 2em;
     color: #a18cff;
     
 }
 .como-funciona__instrucoes{
-    /* background-color: #77D7ED; */
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    /* font-size: 1.3em; */
 }
 .como-funciona__instrucoes div{
     display: flex;
@@ -39,6 +38,7 @@
     align-items: center;
     justify-content: center;
     margin: 25px 0;
+    width: 275px;
 }
 
 @media (min-width: 992px) {

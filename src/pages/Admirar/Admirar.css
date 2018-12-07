@@ -79,6 +79,7 @@
     padding: 5px 15px;
     color: #77D7ED;
     background: white;
+    cursor: pointer;
 }
 .admirar__botao-display{
     width: 100%;
@@ -139,4 +140,37 @@
 }
 .image_picker .clear{
     clear:both;
+}
+
+/* Modal do Certificado */
+.modal{
+    width: 50%;
+    height: 30%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+.modal button {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    height: 28px;
+    width: 28px;
+    background-color: white;
+    cursor: pointer;
+}
+.modal button:hover{
+    box-shadow: 0 3px 8px 1px #e8717b91;
+    transition: 0.1s linear;
+}
+.botao__modal--fechar{
+    position: absolute;
+    top: 490px;
+    background: url("./cancel.svg");
+    
+}
+.botao__modal--download{
+    position: absolute;
+    top: 490px;
+    margin-left: 30px;
+    background: url("./download-arrow.svg");    
 }

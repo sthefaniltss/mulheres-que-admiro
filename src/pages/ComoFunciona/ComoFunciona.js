@@ -17,7 +17,7 @@ class ComoFunciona extends Component {
         <main className="como-funciona">
                 <article className="como-funciona__titulo">
                     <h1>
-                        Como Funciona 
+                        É só seguir o passo a passo! 
                     </h1>
                 </article>
                 <section className="como-funciona__instrucoes">

@@ -13,7 +13,7 @@ class QuemSomos extends Component {
                 <main className="quem-somos">
                     <article className="quem-somos__titulo">
                         <h1>
-                            A Iniciativa
+                            Uma iniciativa para alegrar alguém!
                         </h1>
                     </article>
                     <section className="quem-somos__introducao">

@@ -96,11 +96,17 @@ class Admirar extends Component {
                     </form>
                     {
                         certificado ? (
-                        <div> 
+                        <div className="modal"> 
                             <Layout alteraSetState={this.dados}/> 
-                            <button className="botao__modal--fechar">
-
-                            </button>
+                            <div>
+                                <button className="botao__modal--fechar">
+                                    
+                                </button>
+                                <button className="botao__modal--download">
+                                    
+                                </button>
+                            </div>
+                            
                         </div>
                         ) : false
                     }

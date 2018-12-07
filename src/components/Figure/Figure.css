@@ -1,7 +1,7 @@
 .figure__{
     background-color: #77d7ed;
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     border: 6px solid #77D7ED;
     box-shadow: 1px 1px 8px 1px rgba(0, 0, 0, 0.219);
@@ -10,5 +10,5 @@
     justify-content: center;
 }
 .figure__imagem{
-    width: 180px;
+    width: 170px;
 }
