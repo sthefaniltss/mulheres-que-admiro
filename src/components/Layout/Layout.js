@@ -9,10 +9,10 @@ class Layout extends Component {
         this.state = {
             dados :[{
                 nomeAdmirada: "Sthefani"},
-                {mensagem: "textareaMensagem"},
-                {nomeCompleto: "inputNome.pegaValor()"},
-                {data:"inputData.pegaValor()"},
-                {nomeAssinatura: "inputAssinatura.pegaValor()"
+                {mensagem: "uma mensagem aqui"},
+                {nomeCompleto: "meu nome completo"},
+                {data:"12/12/2019"},
+                {nomeAssinatura: "meu nome de assinatura"
             }]
         }
     }
@@ -22,7 +22,7 @@ class Layout extends Component {
 
     render() {
         return (
-            <div alteraState={this.props.alteraState} onChange={this.onChildChanged} id="layout__admirar" className="layout">
+            <div alteraState={this.props.alteraState} id="layout__admirar" className="layout">
                 <div className="layout__linha-rosa">
                     <div className="layout__linha-azul">
                         <div>

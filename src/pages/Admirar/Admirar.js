@@ -33,7 +33,7 @@ class Admirar extends Component {
         return this.dados;
     }
 
-    validar = (event) => {
+    validar = event => {
         const textarea = event.target;
         const {value} = textarea;
         this.valor = value;
@@ -44,23 +44,31 @@ class Admirar extends Component {
         
     // }
     enviaDados = (event) => {
-        event.preventDefault();
-        const inputAdmirada = this.nomeAdmiradaRef.current;
-        const inputNome =  this.nomeRef.current;
-        const inputData =  this.dataRef.current;
-        const inputAssinatura =  this.assinaturaRef.current;
-        const textareaMensagem = this.valor;
-        const dados = [{
-            nomeAdmirada: inputAdmirada.pegaValor()},
-            {mensagem: textareaMensagem},
-            {nomeCompleto: inputNome.pegaValor()},
-            {data:inputData.pegaValor()},
-            {nomeAssinatura: inputAssinatura.pegaValor()
-        }]
-        this.setState({dados})
-        this.setState({certificado: true});
-        console.log(dados)
-    
+        if(this.state.image){
+
+            event.preventDefault();
+            const inputAdmirada = this.nomeAdmiradaRef.current;
+            const inputNome =  this.nomeRef.current;
+            const inputData =  this.dataRef.current;
+            const inputAssinatura =  this.assinaturaRef.current;
+            const textareaMensagem = this.valor;
+            const dados = [{
+                nomeAdmirada: inputAdmirada.pegaValor()},
+                {mensagem: textareaMensagem},
+                {nomeCompleto: inputNome.pegaValor()},
+                {data:inputData.pegaValor()},
+                {nomeAssinatura: inputAssinatura.pegaValor()
+                }]
+                this.setState({dados})
+                this.setState({certificado: true});
+                console.log(dados)
+        }else{
+            alert("Escolha um layout primeiro!");
+        }
+        
+    }
+    fechaLayout = () => {
+        this.setState({certificado: false});
     }
 
     render() {
@@ -103,7 +111,7 @@ class Admirar extends Component {
                         <div className="modal"> 
                             <Layout alteraState={this.state.dados} ref={el => (this.Layout = el)}/> 
                             <div>
-                                <button className="botao__modal--fechar">
+                                <button onClick={this.fechaLayout} className="botao__modal--fechar">
                                     
                                 </button>
                                 <ReactToPrint trigger={() => <button className="botao__modal--download"></button>} 
