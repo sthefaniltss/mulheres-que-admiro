@@ -39,10 +39,7 @@ class Admirar extends Component {
         this.valor = value;
         console.log(value)
     }
-    // layoutEscolhido = (event) => {
-    //     event.preventDefault();
-        
-    // }
+  
     enviaDados = (event) => {
         if(this.state.image){
 

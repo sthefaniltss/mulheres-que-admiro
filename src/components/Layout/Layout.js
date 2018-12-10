@@ -16,9 +16,11 @@ class Layout extends Component {
             }]
         }
     }
-    onChildChanged() {
+    componentDidMount() {
         this.setState({dados: this.props.alteraState});
     }
+
+    
 
     render() {
         return (
