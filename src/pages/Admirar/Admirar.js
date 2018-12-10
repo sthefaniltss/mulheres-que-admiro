@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import ImagePicker from 'react-image-picker';
+import ReactToPrint from "react-to-print";
 import Navbar from '../../components/Navbar/Navbar';
 import Label from '../../components/Label/Label';
 import Campo from '../../components/Campo/Campo';
 import Layout from '../../components/Layout/Layout';
-import ImagePicker from 'react-image-picker';
 import passo4 from '../../passo4.png';
 import layout2 from './layout2.png';
 import layout3 from './layout3.png';
@@ -16,7 +17,7 @@ class Admirar extends Component {
         this.nomeRef = React.createRef();
         this.dataRef = React.createRef();
         this.assinaturaRef = React.createRef();
-        this.mensagem = React.createRef();
+        // this.mensagem = React.createRef();
         this.state = { image: null, certificado: false, dados: null};
         this.valor = '';
     }
@@ -28,9 +29,9 @@ class Admirar extends Component {
     pegaValor() {
         return this.valor;
     }
-    // pegaLayout(){
-    //     return this.layout;
-    // }
+    pegaDados(){
+        return this.dados;
+    }
 
     validar = (event) => {
         const textarea = event.target;
@@ -38,25 +39,28 @@ class Admirar extends Component {
         this.valor = value;
         console.log(value)
     }
-    layoutEscolhido = (event) => {
-        event.preventDefault();
-        this.setState({certificado: true});
-    }
+    // layoutEscolhido = (event) => {
+    //     event.preventDefault();
+        
+    // }
     enviaDados = (event) => {
         event.preventDefault();
         const inputAdmirada = this.nomeAdmiradaRef.current;
         const inputNome =  this.nomeRef.current;
         const inputData =  this.dataRef.current;
         const inputAssinatura =  this.assinaturaRef.current;
-        const textareaMensagem = this.mensagem.current;
-        const dados = {
-            nomeAdmirada: inputAdmirada.pegaValor(),
-            mensagem: textareaMensagem,
-            nomeCompleto: inputNome.pegaValor(),
-            data:inputData.pegaValor(),
-            nomeAssinatura: inputAssinatura.pegaValor()
-        }
+        const textareaMensagem = this.valor;
+        const dados = [{
+            nomeAdmirada: inputAdmirada.pegaValor()},
+            {mensagem: textareaMensagem},
+            {nomeCompleto: inputNome.pegaValor()},
+            {data:inputData.pegaValor()},
+            {nomeAssinatura: inputAssinatura.pegaValor()
+        }]
         this.setState({dados})
+        this.setState({certificado: true});
+        console.log(dados)
+    
     }
 
     render() {
@@ -78,12 +82,12 @@ class Admirar extends Component {
                     </div>
                 </article>
                 <section className="admirar__secao">
-                    <form   onSubmit={this.enviaDados}>
+                    <form onSubmit={this.enviaDados} >
                     <h1>Agora preencha as informações:</h1>
                         <Label>Nome da Admirada:</Label>
                         <Campo ref={this.nomeAdmiradaRef} id="nome__admirada" type="text" name="nome__admirada" placeholder="Digite aqui o nome da admirada" />
                         <Label>Mensagem:</Label>
-                        <textarea ref={this.mensagem} onChange={this.validar} className="admirar__mensagem" rows="3" placeholder="Digite aqui a sua homenagem"> </textarea>
+                        <textarea onChange={this.validar} className="admirar__mensagem" rows="3" placeholder="Digite aqui a sua homenagem"> </textarea>
                         <Label>Nome completo:</Label>
                         <Campo ref={this.nomeRef} id="nome" type="text" name="nome__seu" placeholder="Digite aqui o seu nome" />
                         <Label>Data:</Label>
@@ -91,20 +95,21 @@ class Admirar extends Component {
                         <Label>Nome na assinatura:</Label>
                         <Campo ref={this.assinaturaRef} id="nome__assinatura" type="text" name="nome__assinatura" placeholder="Digite aqui o nome na assinatura"/>
                         <div className="admirar__botao-display">
-                            <button  onClick={this.layoutEscolhido} className="admirar__botao">Admirar!</button>
+                            <button  className="admirar__botao">Admirar!</button>
                         </div>
                     </form>
                     {
                         certificado ? (
                         <div className="modal"> 
-                            <Layout alteraSetState={this.dados}/> 
+                            <Layout alteraState={this.state.dados} ref={el => (this.Layout = el)}/> 
                             <div>
                                 <button className="botao__modal--fechar">
                                     
                                 </button>
-                                <button className="botao__modal--download">
-                                    
-                                </button>
+                                <ReactToPrint trigger={() => <button className="botao__modal--download"></button>} 
+                                    content={() => this.Layout}
+                                />
+                                
                             </div>
                             
                         </div>
